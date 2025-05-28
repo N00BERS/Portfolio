@@ -10,30 +10,31 @@ const Hero = () => {
   return (
     <div
       ref={ref}
-      className="min-h-screen flex items-center bg-gradient-to-r from-black via-[#341212] to-red-800 px-8 py-32 relative"
+      className="min-h-screen flex items-center bg-gradient-to-r from-black via-[#341212] to-red-800 px-4 py-16"
     >
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid md:grid-cols-2 gap-20 items-center">
-          {/* LEFT TEXT CONTENT */}
+      <div className="container mx-auto max-w-5xl">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+
+          {/* LEFT TEXT */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h3 className="text-3xl mb-6 text-gray-300 tracking-widest uppercase">
+            <h3 className="text-2xl mb-4 text-gray-300 uppercase tracking-wide">
               Welcome to my world
             </h3>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-10 leading-tight text-white">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-white">
               Hi, I'm <span className="text-primary">Christian</span>
               <br />
-              <span className="text-4xl md:text-5xl lg:text-6xl block mt-4">a Software Developer</span>
+              <span className="text-3xl md:text-4xl block mt-2">a Software Developer</span>
             </h1>
-            <p className="text-gray-300 mb-10 text-xl md:text-2xl leading-relaxed max-w-xl">
+            <p className="text-gray-300 mb-8 text-lg md:text-xl leading-relaxed max-w-lg">
               I create stunning web applications and deliver exceptional digital experiences with precision and creativity.
             </p>
 
             {/* SOCIAL ICONS */}
-            <div className="flex space-x-8 mb-12">
+            <div className="flex space-x-6 mb-8">
               {[{
                 href: "https://github.com/your-username",
                 icon: <FaGithub />,
@@ -49,8 +50,8 @@ const Hero = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-4xl text-white hover:text-primary"
-                  whileHover={{ scale: 1.3 }}
+                  className="text-3xl text-white hover:text-primary"
+                  whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -61,7 +62,7 @@ const Hero = () => {
 
             <a
               href="#contact"
-              className="inline-block px-10 py-5 bg-primary text-white text-xl font-semibold rounded-full hover:bg-[#d4003f] transition-colors"
+              className="inline-block px-8 py-3 bg-primary text-white text-lg font-semibold rounded-full hover:bg-[#d4003f] transition-colors"
             >
               Get in Touch
             </a>
@@ -69,17 +70,18 @@ const Hero = () => {
 
           {/* RIGHT IMAGE */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
+            initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full flex justify-center"
+            className="flex justify-center"
           >
             <img
               src={HeroImage}
               alt="Developer Illustration"
-              className="w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full shadow-2xl object-cover transition-transform duration-500 transform hover:scale-105"
+              className="w-[300px] h-[300px] md:w-[350px] md:h-[350px] rounded-full shadow-2xl object-cover transition-transform duration-500 hover:scale-105"
             />
           </motion.div>
+
         </div>
       </div>
     </div>
